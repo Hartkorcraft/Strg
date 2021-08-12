@@ -32,12 +32,11 @@ namespace HartLib
         public static bool CheckIfInRange(Vector2i pos, Vector2ui range) { return CheckIfInRange(pos.Vec2(), range.Vec2()); }
         public static bool CheckIfInRange(Vector2ui pos, Vector2ui range) { return CheckIfInRange(pos.Vec2(), range.Vec2()); }
 
-        //Todo this 
-        public static bool BelowLine(uint lineLenght, uint posOnLine, float height)
-        {
+        // public static bool BelowLine(uint lineLenght, uint posOnLine, float height)
+        // {
 
-            return false;
-        }
+        //     return false;
+        // }
 
         public static Vector2 CartToIso(Vector2i pos)
         {

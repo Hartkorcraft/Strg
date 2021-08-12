@@ -7,11 +7,8 @@ using static HartLib.Utils;
 public class Map
 {
     public TileMap FloorTiles { get; private set; }
-    public TileMap MidTiles { get; private set; }
     public TileMap DebugTiles { get; private set; }
-
     public Vector2ui MapSize { get; private set; } = new Vector2ui(10, 10);
-    public static Vector2ui TileSize { get; private set; } = new Vector2ui(32, 16);
     private GridCell[,] gridMap;
 
     // public void DisplayPath(List<PathFinding<TileTypes>.PathFindingCell> path, bool clear = true)
@@ -29,7 +26,6 @@ public class Map
         if (clear)
         {
             FloorTiles.Clear();
-            MidTiles.Clear();
         }
 
         gridMap = new GridCell[_MapSize.x, _MapSize.y];
@@ -43,35 +39,32 @@ public class Map
         }
     }
 
-    public GridCell GetGridCell(Vector2i gridPos) { return gridMap[gridPos.x, gridPos.y]; }
+    public GridCell GetGridCell(Vector2i gridPos)
+    {
+        if (CheckIfInRange(gridPos, MapSize)) { return gridMap[gridPos.x, gridPos.y]; }
+        return null;
+    }
 
-    public TileTypes GetFloorTileType(Vector2i gridPos)
+    public TileType GetTileType(Vector2i gridPos, TileMap tileMap)
+    {
+        return (TileType)tileMap.GetCellv(gridPos.Vec2());
+    }
+
+    public TileType GetFloorTileType(Vector2i gridPos)
     {
         if (CheckIfInRange(gridPos, MapSize.Vec2i()))
         {
             return gridMap[gridPos.x, gridPos.y].FloorTile;
         }
-        return TileTypes.Empty;
-    }
-    public TileTypes GetMidTileType(Vector2i gridPos)
-    {
-        if (CheckIfInRange(gridPos, MapSize.Vec2i()))
-        {
-            return gridMap[gridPos.x, gridPos.y].MidTile;
-        }
-        return TileTypes.Empty;
+        return TileType.Empty;
     }
 
-    public void SetTileFloor(Vector2i gridPos, TileTypes type)
+    public void SetTileFloor(Vector2i gridPos, TileType type)
     {
         if (CheckIfInRange(gridPos, MapSize.Vec2i()))
         {
             gridMap[gridPos.x, gridPos.y].FloorTile = type;
         }
-    }
-    public void SetTileMid(Vector2i gridPos, TileTypes type)
-    {
-        gridMap[gridPos.x, gridPos.y].MidTile = type;
     }
 
     public bool OnMap(Vector2i pos)
@@ -79,17 +72,17 @@ public class Map
         return CheckIfInRange(pos, MapSize.Vec2i());
     }
 
-    public Map(Vector2ui _mapSize, TileMap _FloorTiles, TileMap _MidTiles, TileMap _DebugTiles)
+    public Map(Vector2ui _mapSize, TileMap _FloorTiles, TileMap _DebugTiles)
     {
         FloorTiles = _FloorTiles;
-        MidTiles = _MidTiles;
         DebugTiles = _DebugTiles;
         MapSize = _mapSize;
     }
-    public enum TileTypes
+    public enum TileType
     {
-        Empty = 0,
-        Grass = 1,
-        Rock = 2
+        Empty = -1,
+        Grass = 0,
+        Rock = 1,
+        Wood = 2
     }
 }

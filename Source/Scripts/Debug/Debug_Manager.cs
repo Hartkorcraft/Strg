@@ -46,11 +46,12 @@ public class Debug_Manager : Node
 
     public void UpdateLog(string name, string logText, bool display = true)
     {
-        if (logs[name] is null) return;
+        if (logs[name] is null) { throw new Exception("No log");};
         logs[name].LabelText = logText;
         logs[name].Display = display;
         UpdateLogsDisplay();
     }
+
 
     public void UpdateLogsDisplay()
     {
@@ -70,7 +71,7 @@ public class DebugInfo
     public string LabelText { get; set; }
     public bool Display { get; set; }
 
-    public DebugInfo(string name, string labelTest, bool display = true)
+    public DebugInfo(string name, string labelTest = "", bool display = true)
     {
         Name = name;
         LabelText = labelTest;
