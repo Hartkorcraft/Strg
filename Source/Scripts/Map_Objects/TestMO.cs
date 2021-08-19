@@ -14,6 +14,7 @@ public class TestMO : SpriteMapObject, ISelectable
         base._EnterTree();
         blockingMovement.Add(Map.TileType.Brick_Wall);
 
+        GridPos = new Vector2i(Position / new Vector2(GlobalConst.TILE_SIZE, GlobalConst.TILE_SIZE));
         Setup_TwoPointLine();
     }
 
@@ -31,7 +32,7 @@ public class TestMO : SpriteMapObject, ISelectable
     {
         if (Main.game_Manager.AllowWorldInput && inputEvent.IsActionPressed("Left_Mouse"))
         {
-            if (Main.game_Manager.CurrentSelection == this)
+            if (Main.game_Manager.CurrentSelection == this && Main.game_Manager.Mouseover.Count == 0)
             {
                 Main.map.DebugTiles.Clear();
                 var path = Main.map.PathFinding.FindPath(GridPos, Main.Mouse_Grid_Pos, blockingMovement, true, true);

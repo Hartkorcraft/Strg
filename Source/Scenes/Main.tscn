@@ -30,7 +30,16 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 8, 8 )
 format = 1
 
+[node name="TestMapObject3" parent="Tiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 152 )
+Transition_Speed = 0.7
+
 [node name="TestMapObject" parent="Tiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 72 )
+Transition_Speed = 0.7
+
+[node name="TestMapObject2" parent="Tiles" instance=ExtResource( 5 )]
+position = Vector2( 24, 40 )
 Transition_Speed = 0.7
 
 [node name="Game_Manager" type="Node" parent="."]

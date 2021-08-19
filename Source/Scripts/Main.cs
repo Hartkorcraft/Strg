@@ -38,8 +38,8 @@ public class Main : Node
 
 
 
-        var testMapObject = (TestMO)GetNode("Tiles/TestMapObject");
-        testMapObject.GridPos = new Vector2i(4, 2);
+        //var testMapObject = (TestMO)GetNode("Tiles/TestMapObject");
+        //testMapObject.GridPos = new Vector2i(4, 2);
     }
 
     public override void _Ready()
