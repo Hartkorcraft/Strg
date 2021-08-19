@@ -19,10 +19,20 @@ public class GridCell
             Main.map?.FloorTiles.SetCellv(GridPos.Vec2(), (int)floorTile);
         }
     }
-
-    public GridCell(Vector2i _gridPos, Map.TileType _floorTile = Map.TileType.Grass)
+    private Map.TileType midTile;
+    public Map.TileType MidTile
+    {
+        get { return midTile; }
+        set
+        {
+            midTile = value;
+            Main.map?.MidTiles.SetCellv(GridPos.Vec2(), (int)midTile);
+        }
+    }
+    public GridCell(Vector2i _gridPos, Map.TileType _floorTile = Map.TileType.Grass, Map.TileType _midTile = Map.TileType.Empty)
     {
         GridPos = _gridPos;
         FloorTile = _floorTile;
+        MidTile = _midTile;
     }
 }

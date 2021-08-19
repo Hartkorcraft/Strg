@@ -5,10 +5,8 @@ using HartLib;
 using static HartLib.Utils;
 //using static GlobalConstants;
 
-public abstract class MapObject : Node2D, IHealth, ISelectable, INameable
+public abstract class MapObject : Node2D, IHealth, INameable
 {
-
-    public string ObjectName { get; protected set; } = "";// = "Default_name";
     protected Vector2i gridPos;
     public virtual Vector2i GridPos
     {
@@ -19,8 +17,13 @@ public abstract class MapObject : Node2D, IHealth, ISelectable, INameable
             gridPos = value;
         }
     }
-
     public int Health { get; set; } = 1;
+
+
+    //////////////////* INameable /////////////////////////
+    public string ObjectName { get; protected set; } = "Default_name";
+    
+    //////////////////* IHEALTH /////////////////////////
     public virtual void Damage(uint dmg)
     {
         if (Health - (int)dmg <= 0)
@@ -42,38 +45,6 @@ public abstract class MapObject : Node2D, IHealth, ISelectable, INameable
     {
         GD.Print("Destroyed: ", this.ToString());
         QueueFree();
-    }
-
-    // protected HashSet<Map.TileTypes> blockingTiles = new HashSet<Map.TileTypes> { Map.TileTypes.StoneBlock };
-    // protected Func<Vector2i, HashSet<Map.TileTypes>, bool> checkForBlocking = (pos, blocking) =>
-    // { return (blocking.Contains((Map.TileTypes)Main.map.GetFloorTileType(pos)) || blocking.Contains((Map.TileTypes)Main.map.GetMidTileType(pos))) && Main.map.GetDarknessTileType(pos) != Map.TileTypes.FullDarkness; };
-
-    public override void _EnterTree()
-    {
-
-    }
-
-    public override void _Ready()
-    {
-
-    }
-
-    public virtual void Turn()
-    {
-
-    }
-
-    public virtual void HandleSelection()
-    {
-
-    }
-    public virtual void HandleBeingSelected()
-    {
-
-    }
-    public virtual void HandleBeingUnselected()
-    {
-
     }
 
 }

@@ -7,23 +7,17 @@ using static HartLib.Utils;
 public class Debug_Manager : Node
 {
 
-    /////////////////////////////////////////////////////////////////////////////////////
-
     Label debugInfoLabel;
+
+    /// Use AddLog, DeleteLog, UpdateLog and ClearLogs()
     Dictionary<string, DebugInfo> logs = new Dictionary<string, DebugInfo>();
     string debugText = "";
 
-    /////////////////////////////////////////////////////////////////////////////////////
 
     public override void _EnterTree()
     {
         debugInfoLabel = (Label)GetChild(0);
         debugInfoLabel.Text = debugText;
-    }
-
-    public override void _Process(float delta)
-    {
-        //debugInfoLabel.Text = debugText;
     }
 
     public void AddLog(DebugInfo log)
@@ -46,7 +40,7 @@ public class Debug_Manager : Node
 
     public void UpdateLog(string name, string logText, bool display = true)
     {
-        if (logs[name] is null) { throw new Exception("No log");};
+        if (logs.ContainsKey(name) is false) { throw new Exception("no log " + name); }
         logs[name].LabelText = logText;
         logs[name].Display = display;
         UpdateLogsDisplay();

@@ -11,11 +11,10 @@ namespace HartLib
     {
         Vector2i gridSize;
         PathFindingCell[,] grid;
-        HashSet<TBlock> blockingTiles;
         Func<Vector2i, HashSet<TBlock>, bool> checkBlocking;
 
 
-        public List<PathFindingCell> FindPath(Vector2i startPos, Vector2i endPos, bool diagonals = false, bool big = false)
+        public List<PathFindingCell> FindPath(Vector2i startPos, Vector2i endPos, HashSet<TBlock> blockingTiles, bool include_checking_last = true, bool diagonals = false, bool big = false)
         {
             int safeCheck = 700;
 
@@ -66,6 +65,10 @@ namespace HartLib
 
                 if (currentCell == endCell)
                 {
+                    if (include_checking_last && currentCell.CheckForTiles(blockingTiles, checkBlocking))
+                    {
+                        return null;
+                    }
                     List<PathFindingCell> path = RetracePath(startCell, endCell);
                     return path;
                 }
@@ -183,8 +186,6 @@ namespace HartLib
             return neigbours;
         }
 
-
-
         List<PathFindingCell> RetracePath(PathFindingCell startNode, PathFindingCell endNode)
         {
             List<PathFindingCell> path = new List<PathFindingCell>();
@@ -200,7 +201,6 @@ namespace HartLib
             return path;
         }
 
-
         int GetDistance(PathFindingCell cellA, PathFindingCell cellB)
         {
             int distantX = Mathf.Abs((int)(cellA.GridPos.x - cellB.GridPos.x));
@@ -212,11 +212,9 @@ namespace HartLib
         }
 
 
-
-        public PathFinding(Vector2i _gridSize, HashSet<TBlock> _blockingTiles, Func<Vector2i, HashSet<TBlock>, bool> _checkBlocking)
+        public PathFinding(Vector2i _gridSize, Func<Vector2i, HashSet<TBlock>, bool> _checkBlocking)
         {
             gridSize = _gridSize;
-            blockingTiles = _blockingTiles;
             checkBlocking = _checkBlocking;
             // for example: Func<Vector2i, HashSet<Main.TileTypes>, bool> checkForBlocking = (pos, blocking) => { return blocking.Contains((Main.TileTypes)Main.mapTiles.GetCellv(pos.Vec2())); };
 

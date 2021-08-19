@@ -1,0 +1,53 @@
+Date : 2021-08-18 20:46:01
+Directory : d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source
+Total : 24 files,  1461 codes, 66 comments, 319 blanks, all 1846 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C#       |         24 |      1,461 |         66 |        319 |      1,846 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                          | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                             |         24 |      1,461 |         66 |        319 |      1,846 |
+| HartLib                                                                                       |          6 |        849 |         30 |        176 |      1,055 |
+| Interfaces                                                                                    |          5 |         38 |          1 |         10 |         49 |
+| Scripts                                                                                       |         13 |        574 |         35 |        133 |        742 |
+| Scripts\Debug                                                                                 |          1 |         60 |          1 |         14 |         75 |
+| Scripts\Map_Objects                                                                           |          4 |        204 |         21 |         47 |        272 |
++-----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                      | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\BresenhamLine.cs               | C#       |         56 |          0 |          9 |         65 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\Fov.cs                         | C#       |        204 |         10 |         38 |        252 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\HartLib.cs                     | C#       |        145 |         15 |         29 |        189 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\ImageProcessing.cs             | C#       |         49 |          2 |         13 |         64 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\Pathfinding.cs                 | C#       |        207 |          2 |         55 |        264 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\HartLib\Vector.cs                      | C#       |        188 |          1 |         32 |        221 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Interfaces\IHealth.cs                  | C#       |          8 |          0 |          3 |         11 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Interfaces\IMouseable.cs               | C#       |         10 |          0 |          2 |         12 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Interfaces\IMoveable.cs                | C#       |          9 |          1 |          1 |         11 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Interfaces\INameable.cs                | C#       |          4 |          0 |          2 |          6 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Interfaces\ISelectable.cs              | C#       |          7 |          0 |          2 |          9 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Debug\Debug_Manager.cs         | C#       |         60 |          1 |         14 |         75 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Game_Manager.cs                | C#       |         46 |          0 |          8 |         54 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\GlobalConstants.cs             | C#       |          7 |          0 |         11 |         18 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\GridCell.cs                    | C#       |         36 |          0 |          3 |         39 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Helpers.cs                     | C#       |          7 |          0 |          4 |         11 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Main.cs                        | C#       |         72 |          3 |         19 |         94 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Map.cs                         | C#       |         94 |          9 |         13 |        116 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Map_Objects\Character.cs       | C#       |         12 |         11 |          5 |         28 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Map_Objects\MapObject.cs       | C#       |         42 |          3 |          6 |         51 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Map_Objects\SpriteMapObject.cs | C#       |         90 |          5 |         19 |        114 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Map_Objects\TestMO.cs          | C#       |         60 |          2 |         17 |         79 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\Selector.cs                    | C#       |         18 |          0 |          7 |         25 |
+| d:\DokumentyITD\coding_stuff\strategy2 lol\Strg\Source\Scripts\TwoPointLine.cs                | C#       |         30 |          1 |          7 |         38 |
+| Total                                                                                         |          |      1,461 |         66 |        319 |      1,846 |
++-----------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

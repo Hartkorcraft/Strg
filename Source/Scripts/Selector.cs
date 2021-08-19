@@ -9,13 +9,16 @@ public class Selector : Sprite
 {
     [Export]
     public float MoveSpeed { get; set; } = 0.3f;
-    public override void _Process(float delta)
-    {
-        if (this.Visible)
 
+    public override void _PhysicsProcess(float delta)
+    {
+        base._PhysicsProcess(delta);
+        
+        if (this.Visible)
         {
-            Position = Lerp(Position, (Main.MouseGridPos.Vec2() * GlobalConst.TILE_SIZE) - new Vector2(1, 1), MoveSpeed);
+            Position = Lerp(Position, (Main.Mouse_Grid_Pos.Vec2() * GlobalConst.TILE_SIZE) - new Vector2(1, 1), MoveSpeed);
         }
     }
+
 
 }
